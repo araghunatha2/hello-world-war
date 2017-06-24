@@ -1,6 +1,7 @@
 node('maven') {
              // define commands
-             def mvnCmd = "mvn -s conf/settings.xml"
+             //def mvnCmd = "mvn -s conf/settings.xml"
+             def mvnCmd = "mvn"
 
              stage ('Build') {
                git 'https://github.com/araghunatha2/hello-world-war.git'
