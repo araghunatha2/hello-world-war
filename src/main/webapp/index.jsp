@@ -9,6 +9,5 @@
 		<%= new java.util.Date() %></p>
 	<p>
 		You are coming from here 
->>>>>>> refs/heads/master
 		<%= request.getRemoteAddr()  %></p>
 </body>
