@@ -26,7 +26,7 @@
 
              stage ('Deploy DEV') {
                sh "rm -rf oc-build && mkdir -p oc-build/deployments"
-               sh "cp target/helloworld.war oc-build/deployments/ROOT.war"
+               sh "cp target/helloworldwar.war oc-build/deployments/ROOT.war"
                sh "oc project "
                // clean up. keep the image stream
                sh "oc delete bc,dc,svc,route -l app=helloworld -n javaweb"
