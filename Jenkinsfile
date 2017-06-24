@@ -6,18 +6,7 @@
                git 'https://github.com/araghunatha2/hello-world-war.git'
                sh "${mvnCmd} clean install -DskipTests=true"
              }
-             stage ('Test and Analysis') {
-               parallel (
-                   'Test': {
-                       //sh "${mvnCmd} test"
-                       //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-                       echo "dummy Test message"
-                   },
-                   'Static Analysis': {
-                       //sh "${mvnCmd} jacoco:report sonar:sonar -Dsonar.host.url=http://sonarqube:9000 -DskipTests=true"
-                       echo "dummy static analysis"
-                   }
-               )
+             
                
                 stage ('Push to Nexus') {
                  //sh "${mvnCmd} deploy -DskipTests=true"
@@ -38,5 +27,5 @@
                sh "oc new-app helloworld:latest -n javahelloworldweb"
                sh "oc expose svc/helloworld -n javahelloworldweb"
              }
-             }
+          }
  
