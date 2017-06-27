@@ -40,7 +40,7 @@ node('maven') {
                // clean up. keep the imagestream
                sh "oc delete bc,dc,svc,route -l app=testhelloworld -n javahelloworldweb"
                // deploy stage image
-               sh "oc new-app testhelloworld:${v} -n javahelloworldweb"
+               sh "oc new-app helloworld:${v} -n javahelloworldweb"
                sh "oc expose svc/testhelloworld -n javahelloworldweb"
              }    
 }
