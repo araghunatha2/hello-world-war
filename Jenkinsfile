@@ -42,9 +42,9 @@ node('maven') {
                // deploy stage image
                sh "oc new-app testhelloworld:${v} -n javahelloworldweb"
                sh "oc expose svc/testhelloworld -n javahelloworldweb"
-             }
-    def version() {
+             }    
+}
+def version() {
             def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
             matcher ? matcher[0][1] : null
              }
-}
