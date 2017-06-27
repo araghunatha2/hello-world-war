@@ -18,7 +18,7 @@ node('maven') {
                sh "cp target/helloworldwar.war oc-build/deployments/ROOT.war"
                sh "oc project "
                // clean up. keep the image stream
-               sh "oc delete bc,dc,svc,route -l app=helloworld -n javahelloworldweb"
+               //sh "oc delete bc,dc,svc,route -l app=helloworld -n javahelloworldweb"
                // create build. override the exit code since it complains about exising imagestream
                sh "oc new-build --name=helloworld --image-stream=jboss-webserver30-tomcat8-openshift --binary=true --labels=app=helloworld -n javahelloworldweb || true"
                // build image
