@@ -35,12 +35,12 @@ node('maven') {
               sh "oc scale dc/helloworld --replicas=0"
                def v = version()
                // tag for stage
-               sh "oc tag javahelloworldweb/helloworld:latest javahelloworldweb/helloworld:${v}"
+               sh "oc tag javahelloworldweb/helloworld:latest javahelloworldweb/testhelloworld:${v}"
                sh "oc project javahelloworldweb"
                // clean up. keep the imagestream
                sh "oc delete bc,dc,svc,route -l app=testhelloworld -n javahelloworldweb"
                // deploy stage image
-               sh "oc new-app helloworld:${v} -n javahelloworldweb"
+               sh "oc new-app testhelloworld:${v} -n javahelloworldweb"
                sh "oc expose svc/testhelloworld -n javahelloworldweb"
              }    
 }
