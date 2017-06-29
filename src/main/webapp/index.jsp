@@ -3,6 +3,7 @@
 <title>Hello try again Java World!</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<h1>Its Java Hello Demo World again!!!!!!!</h1>
 
 	<p>
