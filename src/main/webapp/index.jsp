@@ -3,9 +3,8 @@
 <title>Hello try again Java World!</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<h1>Its Java Hello World !!!!!!!</h1>
-=======
+
 	<p>
 		It is now
 		<%= new java.util.Date() %></p>
