@@ -10,7 +10,7 @@ public class AppTest {
 
     @Before
     public void prepare() {
-        //setBaseUrl("http://helloworld-dev.cloudapps.duw905.gcp.testdrive.openshift.com/");
+        setBaseUrl("https://testhelloworld-javahelloworldweb.1d35.starter-us-east-1.openshiftapps.com");
     }
 
     @Test
@@ -19,6 +19,9 @@ public class AppTest {
         
         beginAt("index.jsp");
         assertTitleEquals("Its Java Hello Demo World again!!!!!!!");        
+
     }
+
+    
 }
 
